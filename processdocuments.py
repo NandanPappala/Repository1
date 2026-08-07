@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 print("Initialize smart text splitter") 
 # 1. Initialize the smart text splitter
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,       # Max characters per chunk
+    chunk_size=500,       # Max characters per chunk
     chunk_overlap=200,     # Overlap between adjacent chunks
     length_function=len,   # How to measure chunk length
     is_separator_regex=False,
@@ -21,4 +21,4 @@ chunks = splitter.split_text(document_content)
 print(f"Created {len(chunks)} chunks.")
 for i, chunk in enumerate(chunks[:3]):
     print(f"--- Chunk {i+1} ---")
-    print(chunk[:200]) # Print first 150 characters
+    print(chunk[:200]) # Print first 200 characters
